@@ -1,1 +1,102 @@
-biurokrates...
+<html>
+	<head>
+		<title>Biurokrates v0.1</title>
+		<meta charset="utf-8">
+		
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+		
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+		
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+		
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+		
+		<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+		
+		<script type="text/javascript">
+		$(function(){
+			$(document).on('click', '.item .header', function(){
+				$(this).next().removeClass('hidden-print');
+				if($(this).hasClass('selected')){
+					$(this).removeClass('selected');
+					$(this).find('.fa').removeClass('hidden');
+					$(this).find('.fa-check-square-o').addClass('hidden');
+					$(this).next().addClass('hidden-print');
+				} else {
+					$(this).addClass('selected');
+					$(this).find('.fa').removeClass('hidden');
+					$(this).find('.fa-square-o').addClass('hidden');
+					
+				}
+				
+				
+				return false;
+			});
+			
+			$(document).on('click', '#print', function(){
+				window.print();
+				return false;
+			});
+		});
+		</script>
+		<style>
+		.item .header{
+			cursor: hand;
+			color: #666;
+		}
+		.item .header.selected{
+			color: #000;
+		}
+		.item .header:hover{
+			color: #000;
+		}
+		</style>
+		
+	</head>
+	<body>
+		<div class="container">
+			<div class="col-md-12">
+				<h1>Biurokrates v0.1</h1>
+			</div>
+			<div class="col-md-12">
+			
+			<div class="item">
+				<div class="header "><h3><i class="fa fa-check-square-o hidden"></i> <i class="fa fa-square-o"></i> 1. Dwuchromian potasu</h3></div>
+				<div class="content hidden-print">
+					<p>
+					Chrom jest jednym z najczęstszych alergenów kontaktowych. Do uczulenia może dojść zarówno w warunkach zawodowych, jak i pozazawodowych.
+					Najważniejsze źródła chromu to: cement, piaski formierskie, smary i oleje przemysłowe, płyny galwanizerskie, środki do garbowania skóry, popioły powstające przy spalaniu węgla, chromianka do mycia szkła laboratoryjnego, odczynniki do badania jakości mleka, chłodziwa, środki do impregnacji drewna, płyny antykorozyjne, farby podkładowe, lakiery, gazy i dymy spawalnicze.
+					</p>
+
+					<p>W warunkach niezawodowych głównym źródłem alergenu jest garbowana chromem skóra używana do produkcji pasków, butów, rękawiczek, odzieży skórzanej.</p>
+
+					<p>Chrom może występować także w metalowych implantach stomatologicznych i ortopedycznych, w niektórych pokarmach, np. w: herbacie, kakao, orzechach, suszonych figach i morelach, ostrygach, w wodzie wodociągowej, a także w popiele z papierosów, w niektórych preparatach homeopatycznych, klejach, atramentach, mydłach, farbowanych tkaninach.</p>
+				</div>
+			</div>
+			
+			<div class="item">
+				<div class="header "><h3><i class="fa fa-check-square-o hidden"></i> <i class="fa fa-square-o"></i> 2. Parafenylenodiamina</h3></div>
+				<div class="content hidden-print">
+					<p>Parafenylenodiamina (PPD) jest barwnikiem, niekiedy nazywanym sztuczną henną. Występuje w farbach do włosów (główny alergen zawodowy fryzjerów), tkanin i futer. Występuje również w tzw. "wakacyjnych tatuażach".</p>
+				</div>
+			</div>
+			
+			<div class="item">
+				<div class="header "><h3><i class="fa fa-check-square-o hidden"></i> <i class="fa fa-square-o"></i> 3. Tiuramy</h3></div>
+				<div class="content hidden-print">
+					<p>Tiuramy wchodzą w skład wielu wyrobów gumowych. Ponadto tiuramy to fungicydy używane w rolnictwie (zaprawa nasion, owoców), dodatki grzybobójcze chłodziw do skrawania metali, bakteriobójcze składniki mydeł, preparaty farmakologiczne do leczenia alkoholizmu (disiarczek tetraetylotiuramu – nazwy handlowe Antabus, Esperal) (13,14,15). Produkty gumowe, zwłaszcza rękawice. Medykamenty (leki do leczenia alkoholizmu, świerzbu, grzybic, filtry przeciwsłoneczne, opatrunki chirurgiczne). Repelenty zwierzęce. Neoprenowe materiały do podeszew butów. Plastiki poliolifenowe. Środki konserwujące (drewno, farby, oleje, smary) . Kity, kleje. Weterynaryjne mydła i szampony.</p>
+				</div>
+			</div>
+
+
+			</div>
+			
+			<div class="col-md-12 text-center">
+				<button id="print" class="btn btn-lg btn-primary"><i class="fa fa-print"></i> Drukuj</button>
+			</div>
+		</div>
+	</body>
+</html>
