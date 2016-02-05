@@ -4,20 +4,40 @@
 		<meta charset="utf-8">
 		
 		<!-- Latest compiled and minified CSS -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+		<link rel="stylesheet" href="assets/bootstrap-3.3.6-dist/css/bootstrap.min.css">
 		
 		<!-- Optional theme -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+		<link rel="stylesheet" href="assets/bootstrap-3.3.6-dist/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
 		
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="assets/font-awesome-4.5.0/css/font-awesome.min.css">
 		
-		<!-- Latest compiled and minified JavaScript -->
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+		<script src="assets/jquery-1.12.0.min.js"></script>
 		
-		<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
 		
 		<script type="text/javascript">
 		$(function(){
+			
+			$.ajax({
+				'url': 'data.xml',
+				'dataType': 'xml',
+				'success': function(data){
+					var items = data.getElementsByTagName("item");
+					
+					for(var item_id in items){
+						var item = items[item_id];
+					
+						if (typeof item !== 'object') continue;
+						
+						var title = item.getElementsByTagName("title")[0].textContent;
+						var content = item.getElementsByTagName("content")[0].textContent;
+						
+						$('#items').append( $('<div class="item">\
+							<div class="header hidden-print"><h3><i class="fa fa-check-square-o hidden hidden-print"></i> <i class="fa fa-square-o hidden-print"></i> ' + title + '</h3></div>\
+							<div class="content hidden-print visible-print-inline">' + content + '</div></div>'));
+					}
+				}
+			});
+			
 			$(document).on('click', '.item .header', function(){
 				$(this).next().removeClass('hidden-print');
 				if($(this).hasClass('selected')){
@@ -61,35 +81,37 @@
 			<div class="col-md-12 hidden-print">
 				<h1>Biurokrates v0.1</h1>
 			</div>
-			<div class="col-md-12">
+			<div class="col-md-12" id="items">
 			
-			<div class="item">
-				<div class="header hidden-print"><h3><i class="fa fa-check-square-o hidden hidden-print"></i> <i class="fa fa-square-o hidden-print"></i> 1. Dwuchromian potasu</h3></div>
-				<div class="content hidden-print visible-print-inline">
-					<p>
-					Chrom jest jednym z najczęstszych alergenów kontaktowych. Do uczulenia może dojść zarówno w warunkach zawodowych, jak i pozazawodowych.
-					Najważniejsze źródła chromu to: cement, piaski formierskie, smary i oleje przemysłowe, płyny galwanizerskie, środki do garbowania skóry, popioły powstające przy spalaniu węgla, chromianka do mycia szkła laboratoryjnego, odczynniki do badania jakości mleka, chłodziwa, środki do impregnacji drewna, płyny antykorozyjne, farby podkładowe, lakiery, gazy i dymy spawalnicze.
-					</p>
-
-					<p>W warunkach niezawodowych głównym źródłem alergenu jest garbowana chromem skóra używana do produkcji pasków, butów, rękawiczek, odzieży skórzanej.</p>
-
-					<p>Chrom może występować także w metalowych implantach stomatologicznych i ortopedycznych, w niektórych pokarmach, np. w: herbacie, kakao, orzechach, suszonych figach i morelach, ostrygach, w wodzie wodociągowej, a także w popiele z papierosów, w niektórych preparatach homeopatycznych, klejach, atramentach, mydłach, farbowanych tkaninach.</p>
+				<!-- 
+				<div class="item">
+					<div class="header hidden-print"><h3><i class="fa fa-check-square-o hidden hidden-print"></i> <i class="fa fa-square-o hidden-print"></i> 1. Dwuchromian potasu</h3></div>
+					<div class="content hidden-print visible-print-inline">
+						<p>
+						Chrom jest jednym z najczęstszych alergenów kontaktowych. Do uczulenia może dojść zarówno w warunkach zawodowych, jak i pozazawodowych.
+						Najważniejsze źródła chromu to: cement, piaski formierskie, smary i oleje przemysłowe, płyny galwanizerskie, środki do garbowania skóry, popioły powstające przy spalaniu węgla, chromianka do mycia szkła laboratoryjnego, odczynniki do badania jakości mleka, chłodziwa, środki do impregnacji drewna, płyny antykorozyjne, farby podkładowe, lakiery, gazy i dymy spawalnicze.
+						</p>
+	
+						<p>W warunkach niezawodowych głównym źródłem alergenu jest garbowana chromem skóra używana do produkcji pasków, butów, rękawiczek, odzieży skórzanej.</p>
+	
+						<p>Chrom może występować także w metalowych implantach stomatologicznych i ortopedycznych, w niektórych pokarmach, np. w: herbacie, kakao, orzechach, suszonych figach i morelach, ostrygach, w wodzie wodociągowej, a także w popiele z papierosów, w niektórych preparatach homeopatycznych, klejach, atramentach, mydłach, farbowanych tkaninach.</p>
+					</div>
 				</div>
-			</div>
-			
-			<div class="item">
-				<div class="header hidden-print"><h3><i class="fa fa-check-square-o hidden hidden-print"></i> <i class="fa fa-square-o hidden-print"></i> 2. Parafenylenodiamina</h3></div>
-				<div class="content hidden-print visible-print-inline">
-					<p>Parafenylenodiamina (PPD) jest barwnikiem, niekiedy nazywanym sztuczną henną. Występuje w farbach do włosów (główny alergen zawodowy fryzjerów), tkanin i futer. Występuje również w tzw. "wakacyjnych tatuażach".</p>
+				
+				<div class="item">
+					<div class="header hidden-print"><h3><i class="fa fa-check-square-o hidden hidden-print"></i> <i class="fa fa-square-o hidden-print"></i> 2. Parafenylenodiamina</h3></div>
+					<div class="content hidden-print visible-print-inline">
+						<p>Parafenylenodiamina (PPD) jest barwnikiem, niekiedy nazywanym sztuczną henną. Występuje w farbach do włosów (główny alergen zawodowy fryzjerów), tkanin i futer. Występuje również w tzw. "wakacyjnych tatuażach".</p>
+					</div>
 				</div>
-			</div>
-			
-			<div class="item">
-				<div class="header hidden-print"><h3><i class="fa fa-check-square-o hidden hidden-print"></i> <i class="fa fa-square-o hidden-print"></i> 3. Tiuramy</h3></div>
-				<div class="content hidden-print visible-print-inline">
-					<p>Tiuramy wchodzą w skład wielu wyrobów gumowych. Ponadto tiuramy to fungicydy używane w rolnictwie (zaprawa nasion, owoców), dodatki grzybobójcze chłodziw do skrawania metali, bakteriobójcze składniki mydeł, preparaty farmakologiczne do leczenia alkoholizmu (disiarczek tetraetylotiuramu – nazwy handlowe Antabus, Esperal) (13,14,15). Produkty gumowe, zwłaszcza rękawice. Medykamenty (leki do leczenia alkoholizmu, świerzbu, grzybic, filtry przeciwsłoneczne, opatrunki chirurgiczne). Repelenty zwierzęce. Neoprenowe materiały do podeszew butów. Plastiki poliolifenowe. Środki konserwujące (drewno, farby, oleje, smary) . Kity, kleje. Weterynaryjne mydła i szampony.</p>
+				
+				<div class="item">
+					<div class="header hidden-print"><h3><i class="fa fa-check-square-o hidden hidden-print"></i> <i class="fa fa-square-o hidden-print"></i> 3. Tiuramy</h3></div>
+					<div class="content hidden-print visible-print-inline">
+						<p>Tiuramy wchodzą w skład wielu wyrobów gumowych. Ponadto tiuramy to fungicydy używane w rolnictwie (zaprawa nasion, owoców), dodatki grzybobójcze chłodziw do skrawania metali, bakteriobójcze składniki mydeł, preparaty farmakologiczne do leczenia alkoholizmu (disiarczek tetraetylotiuramu – nazwy handlowe Antabus, Esperal) (13,14,15). Produkty gumowe, zwłaszcza rękawice. Medykamenty (leki do leczenia alkoholizmu, świerzbu, grzybic, filtry przeciwsłoneczne, opatrunki chirurgiczne). Repelenty zwierzęce. Neoprenowe materiały do podeszew butów. Plastiki poliolifenowe. Środki konserwujące (drewno, farby, oleje, smary) . Kity, kleje. Weterynaryjne mydła i szampony.</p>
+					</div>
 				</div>
-			</div>
+				 -->
 
 
 			</div>
