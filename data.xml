@@ -296,10 +296,9 @@
 	</item>
 	
 	<item>
-		<title>33. Tlenek tytanu (IV)</title>
+		<title>33. Molibden</title>
 		<content><![CDATA[
-			<p>Dwutlenek tytanu można dziś odnaleźć w produktach spożywczych (cukierkach, gumach do żucia, oznaczany np. jako E171), kosmetykach (lakier do paznokci, cienie do powiek, pudry i szminki) czy biżuterii (kolczyki, zegarki).</p>
-			<p>Stopy tytanu są m.in. wykorzystywane w lotnictwie (silniki odrzutowe, promy kosmiczne), w przemyśle militarnym i motoryzacyjnym. Tytan jest wykorzystywany przy produkcji implantów śródkostnych, znajduje również zastosowanie w protetyce stomatologicznej. </p>
+			<p>Dmolibden jest dodawany do stali wytrzymałych na wysokie temperatury oraz wykorzystywany w produkcji części lotniczych, styków elektrycznych, silników przemysłowych i włókien wzmacniających. Molibden dodawany jest do stali dentystycznej w związku z jego wysoką odpornością na korozję oraz spawalność.</p>
 		]]></content>
 	</item>
 	
@@ -326,9 +325,9 @@
 	</item>
 	
 	<item>
-		<title>37. Phenoxyethanol</title>
+		<title>37. Lidokaina</title>
 		<content><![CDATA[
-			<p>Substancja konserwująca w kosmetykach. Utrwalacz perfum. Używany także jako odstraszasz owadów oraz jako miejscowy środek odkażający.Jako środek bakteriobójczy w połączeniu z 1,2-dibromo-2,4-dicyjanobutanem (Euxyl K 400) lub czwartorzędowymi związkami amonowymi.</p>
+			<p>Stosowana jako lek do znieczulenia miejscowego podawana w iniekcjach (znieczulenie nasiękowe, blokady nerwów), lekach do stosowania zewnętrznego (maści, kremy, czopki, np na hemoroidy), żele znieczulające na błony śluzowe, a także we wlewach dożylnych w leczeniu zaburzeń rytmu serca.</p>
 		]]></content>
 	</item>
 	
@@ -340,9 +339,9 @@
 	</item>
 	
 	<item>
-		<title>39. Mentol</title>
+		<title>39. Betametazon</title>
 		<content><![CDATA[
-			<p>Leki, maści, chusteczki higieniczne, papierosy, środki czystości, kosmetyki.</p>
+			<p>Lek glikokortykosteroidowy </p>
 		]]></content>
 	</item>
 	
@@ -366,5 +365,20 @@
 			<p>Zastosowanie w jubilerstwie, elektronice, chemii przemysłowej. Niekiedy jako dodatek do pożywienia (E175). Niektóre leki.</p>
 		]]></content>
 	</item>
+	
+	<item>
+        <title>43. Kwas acetylosalicylowy</title>
+        <content><![CDATA[
+            <p>Aspiryna, ASA. Lek przeciwbólowy, przeciwgorączkowy oraz przeciwzapalny. Stosowany jest w profilaktyce zawału i choroby zakrzepowej.</p>
+        ]]></content>
+    </item>
+	
+	<item>
+        <title>44. Maślan hydrokortyzonu</title>
+        <content><![CDATA[
+            <p>Lek z grupy glikokortykosteroidów.</p>
+        ]]></content>
+    </item>
+	
 
 </items>
